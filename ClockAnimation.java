@@ -18,6 +18,9 @@ public class ClockAnimation extends Application {
     // Create a handler for animation
     EventHandler<ActionEvent> eventHandler = e -> {
       clock.setCurrentTime(); // Set a new clock time
+
+      //Print the current time
+      System.out.println("Now is " + clock.getHour() + ":" + clock.getMinute() + ":" + clock.getSecond());
     };
     
     // Create an animation for a running clock
