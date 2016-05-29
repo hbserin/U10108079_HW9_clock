@@ -74,8 +74,7 @@ public class ClockPane extends Pane {
   /** Paint the clock */
   private void paintClock() {
     // Initialize clock parameters
-    double clockRadius = 
-      Math.min(getWidth(), getHeight()) * 0.8 * 0.5;
+    double clockRadius = Math.min(getWidth(), getHeight()) * 0.8 * 0.5;
     double centerX = getWidth() / 2;
     double centerY = getHeight() / 2;
 
@@ -87,6 +86,9 @@ public class ClockPane extends Pane {
     Text t2 = new Text(centerX - clockRadius + 3, centerY + 5, "9");
     Text t3 = new Text(centerX + clockRadius - 10, centerY + 3, "3");
     Text t4 = new Text(centerX - 3, centerY + clockRadius - 3, "6");
+
+    //Write the current time
+    Text number = new Text(centerX - 20, centerY - 110, getHour() + ":" + getMinute() + ":" + getSecond());
     
     // Draw second hand
     double sLength = clockRadius * 0.8;
@@ -116,7 +118,7 @@ public class ClockPane extends Pane {
     hLine.setStroke(Color.GREEN);
     
     getChildren().clear();  
-    getChildren().addAll(circle, t1, t2, t3, t4, sLine, mLine, hLine);
+    getChildren().addAll(circle, t1, t2, t3, t4, sLine, mLine, hLine, number);
   }
   
   @Override
